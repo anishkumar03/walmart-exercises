@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="50628" started-at="2019-01-12T21:08:31Z" finished-at="2019-01-12T21:09:21Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="50628" started-at="2019-01-12T21:08:31Z" finished-at="2019-01-12T21:09:21Z">
+      <class name="walmart.item.page.ItemPage">
+        <test-method status="PASS" signature="setBaseURL(java.lang.String)[pri:0, instance:walmart.item.page.ItemPage@5622fdf]" name="setBaseURL" is-config="true" duration-ms="15621" started-at="2019-01-12T21:08:31Z" finished-at="2019-01-12T21:08:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.walmart.ca/en/ip/google-home-speaker/6000197114649]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseURL -->
+        <test-method status="PASS" signature="verifyProductDetails()[pri:1, instance:walmart.item.page.ItemPage@5622fdf]" name="verifyProductDetails" duration-ms="3286" started-at="2019-01-12T21:08:46Z" finished-at="2019-01-12T21:08:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductDetails -->
+        <test-method status="PASS" signature="verifyAddtoCartFunction()[pri:2, instance:walmart.item.page.ItemPage@5622fdf]" name="verifyAddtoCartFunction" duration-ms="8015" started-at="2019-01-12T21:08:50Z" finished-at="2019-01-12T21:08:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddtoCartFunction -->
+        <test-method status="PASS" signature="verifyCartCheckoutAndPayment()[pri:3, instance:walmart.item.page.ItemPage@5622fdf]" name="verifyCartCheckoutAndPayment" duration-ms="20425" started-at="2019-01-12T21:08:58Z" finished-at="2019-01-12T21:09:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCartCheckoutAndPayment -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:walmart.item.page.ItemPage@5622fdf]" name="tearDown" is-config="true" duration-ms="3173" started-at="2019-01-12T21:09:18Z" finished-at="2019-01-12T21:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- walmart.item.page.ItemPage -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
