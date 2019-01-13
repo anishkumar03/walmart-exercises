@@ -1,9 +1,8 @@
-	package walmart.item.report;
-	import java.util.HashMap;
-	import java.util.Map;
-
-	import com.aventstack.extentreports.ExtentReports;
-	import com.aventstack.extentreports.ExtentTest;
+package com.item.report;
+import java.util.HashMap;
+import java.util.Map;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 
 	public class ExtentTestManager {
 		static Map<Integer, ExtentTest> extentTestMap = new HashMap<Integer, ExtentTest>();

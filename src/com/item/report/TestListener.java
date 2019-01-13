@@ -1,4 +1,4 @@
-package walmart.item.report;
+package com.item.report;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -21,7 +21,7 @@ public class TestListener implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
 		System.out.println(("*** Running test method " + result.getMethod().getMethodName() + "..."));
-		ExtentTestManager.startTest(result.getMethod().getMethodName());
+		ExtentTestManager.startTest(result.getMethod().getDescription());
 	}
 
 	public void onTestSuccess(ITestResult result) {
@@ -40,7 +40,7 @@ public class TestListener implements ITestListener {
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		System.out.println("*** Test failed but within percentage % " + result.getMethod().getMethodName());
+		System.out.println("*** Test failed but within percentage % " + result.getMethod().getDescription());
 	}
 
 }

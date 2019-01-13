@@ -1,4 +1,4 @@
-package walmart.item.page;
+package com.item.page;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
@@ -19,8 +20,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
-
-import walmart.item.report.ExtentTestManager;
+import com.item.report.ExtentTestManager;
 
 public class ItemPage{
 
@@ -37,7 +37,7 @@ public class ItemPage{
 	private By prodDescription = By.xpath("//h2[@id='product-description-heading']");
 	private By itemSpecifications = By.xpath("//section[@id='product-specs']//h2[contains(@class,'accordion-title')]");
 	private By ratingReviews = By.xpath("//h2[@id='ratings-reviews-heading']");
-	private By checkOutBtn = By.xpath("//a[@class='button']");
+	private By checkOutBtn = By.xpath("//div[@id='ac-ctas']/a[@class='button']");
 	private By shopCartCheckoutBtn = By.xpath("//a[@id='cart-aside-checkout-btn']");
 	private By shopCartTitle = By.xpath("//div[@data-analytics-value='Shopping Cart']");
 	private By paymentOptions = By.xpath("//div[@class='payment-method-inner-wrapper']");
@@ -71,7 +71,7 @@ public class ItemPage{
 			}
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1, description="Verify product details in item home page")
 	public void verifyProductDetails() {
 		try {
 		verifyItemHomePage();
@@ -87,7 +87,7 @@ public class ItemPage{
 			if(!isElementsPresentNameCheck(prodDesc).isEmpty())
 			{
 			while (elmIterator1.hasNext()) {
-				ExtentTestManager.getTest().log(Status.PASS, "The following product details information is displayed in product details page " +"<b>"+elmIterator1.next());
+				ExtentTestManager.getTest().log(Status.PASS, "The following product details information is displayed in product details page: " +"<b>"+elmIterator1.next());
 			}
 			}else
 				ExtentTestManager.getTest().log(Status.FAIL, "The expected product details information is not displayed in item page");
@@ -124,7 +124,7 @@ public class ItemPage{
 			
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2, description="Verify add to cart functionality")
 	public void verifyAddtoCartFunction() throws IOException
 	{
 		if(isElementPresent(addCartButton))
@@ -142,7 +142,7 @@ public class ItemPage{
 				FuncClick(continueShopBtn);
 				waitForElementPresence(addCartButton);
 				if(isElementPresent(addCartButton)) {	
-					ExtentTestManager.getTest().log(Status.PASS, "Clicked on continue shopping button and navigated back to Item home page\"");
+					ExtentTestManager.getTest().log(Status.PASS, "Clicked on continue shopping button and navigated back to Item home page");
 					Thread.sleep(2000);
 				}else
 					ExtentTestManager.getTest().log(Status.FAIL, "Your shopping cart page is not displayed");
@@ -152,13 +152,13 @@ public class ItemPage{
 			}
 		}
 	}
-	@Test(priority=3)
+	@Test(priority=3, description="Verify cart checkout and payment options")
 	public void verifyCartCheckoutAndPayment() throws IOException {
 		try {
 			waitForElementPresence(addCartButton);
 			FuncClick(addCartButton);
-			waitForElementPresence(checkOutBtn);
-			FuncClick(checkOutBtn);
+			Thread.sleep(2000);
+			moveToElementNPerformClick(checkOutBtn);
 			waitForElementPresence(shopCartTitle);
 			if(isElementPresent(shopCartTitle))
 			{
@@ -197,6 +197,7 @@ public class ItemPage{
 			wait.until(ExpectedConditions.presenceOfElementLocated(newElement));
 		} catch (Exception e) {
 			System.out.println("Fail: Element " +newElement +" does not exist");
+			ExtentTestManager.getTest().log(Status.FAIL, "Element " +newElement +" does not exist");
 		}
 	}
 
@@ -225,6 +226,7 @@ public class ItemPage{
 		catch(Exception e)
 		{
 			System.out.println("The element is not present in the current page");
+			ExtentTestManager.getTest().log(Status.FAIL, "Element " +sElementLocater +" does not exist");
 			throw e;
 		}
 	}
@@ -243,10 +245,35 @@ public class ItemPage{
 			}
 			catch(Exception e)
 			{
+				ExtentTestManager.getTest().log(Status.FAIL, "Element " +eleSelector +" does not exist");
 				System.out.println("The element is not present in the current page");
 				throw e;
 			}	
 		}
+	
+	public void moveToElementNPerformClick(By eleSelector) throws InterruptedException, IOException{
+		try{
+			WebDriverWait wait = new WebDriverWait(driver,60);
+			objElement = wait.until(ExpectedConditions.presenceOfElementLocated(eleSelector));
+			 
+			Actions actions = new Actions(driver);
+			WebElement lnkSel = driver.findElement(eleSelector);
+			actions.moveToElement(lnkSel);
+			Thread.sleep(2000);
+			actions.click().perform();
+			//actions.perform();			
+			}
+			catch (IllegalArgumentException e)
+			{
+				ExtentTestManager.getTest().log(Status.FAIL, "Arguments are not correct, see log for more  details..");
+				throw e;			
+			}
+			catch(Exception e)
+			{
+				ExtentTestManager.getTest().log(Status.FAIL, "Verification-<b>- "+eleSelector+"</b> not present in current page");
+				throw e;
+			}
+	}
 	
 	public ArrayList<String> isElementsPresentNameCheck(By by) {
 		ArrayList<String> returnArray=new ArrayList<String>();
