@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="49322" started-at="2019-01-13T02:20:23Z" finished-at="2019-01-13T02:21:12Z">
+  <suite name="Suite" duration-ms="54665" started-at="2019-01-14T03:03:06Z" finished-at="2019-01-14T03:04:00Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="49322" started-at="2019-01-13T02:20:23Z" finished-at="2019-01-13T02:21:12Z">
+    <test name="Test" duration-ms="54665" started-at="2019-01-14T03:03:06Z" finished-at="2019-01-14T03:04:00Z">
       <class name="com.item.page.ItemPage">
-        <test-method status="PASS" signature="setBaseURL(java.lang.String)[pri:0, instance:com.item.page.ItemPage@1e88b3c]" name="setBaseURL" is-config="true" duration-ms="16461" started-at="2019-01-13T02:20:23Z" finished-at="2019-01-13T02:20:40Z">
+        <test-method status="PASS" signature="setBaseURL(java.lang.String)[pri:0, instance:com.item.page.ItemPage@1e88b3c]" name="setBaseURL" is-config="true" duration-ms="21613" started-at="2019-01-14T03:03:06Z" finished-at="2019-01-14T03:03:27Z">
           <params>
             <param index="0">
               <value>
@@ -18,19 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseURL -->
-        <test-method status="PASS" signature="verifyProductDetails()[pri:1, instance:com.item.page.ItemPage@1e88b3c]" name="verifyProductDetails" duration-ms="3708" started-at="2019-01-13T02:20:40Z" description="Verify product details in item home page" finished-at="2019-01-13T02:20:43Z">
+        <test-method status="PASS" signature="verifyProductDetails()[pri:1, instance:com.item.page.ItemPage@1e88b3c]" name="verifyProductDetails" duration-ms="4092" started-at="2019-01-14T03:03:27Z" description="Verify product details in item home page" finished-at="2019-01-14T03:03:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyProductDetails -->
-        <test-method status="PASS" signature="verifyAddtoCartFunction()[pri:2, instance:com.item.page.ItemPage@1e88b3c]" name="verifyAddtoCartFunction" duration-ms="7507" started-at="2019-01-13T02:20:43Z" description="Verify add to cart functionality" finished-at="2019-01-13T02:20:51Z">
+        <test-method status="PASS" signature="verifyAddtoCartFunction()[pri:2, instance:com.item.page.ItemPage@1e88b3c]" name="verifyAddtoCartFunction" duration-ms="7799" started-at="2019-01-14T03:03:32Z" description="Verify add to cart functionality" finished-at="2019-01-14T03:03:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAddtoCartFunction -->
-        <test-method status="PASS" signature="verifyCartCheckoutAndPayment()[pri:3, instance:com.item.page.ItemPage@1e88b3c]" name="verifyCartCheckoutAndPayment" duration-ms="19049" started-at="2019-01-13T02:20:51Z" description="Verify cart checkout and payment options" finished-at="2019-01-13T02:21:10Z">
+        <test-method status="PASS" signature="verifyCartCheckoutAndPayment()[pri:3, instance:com.item.page.ItemPage@1e88b3c]" name="verifyCartCheckoutAndPayment" duration-ms="18591" started-at="2019-01-14T03:03:39Z" description="Verify cart checkout and payment options" finished-at="2019-01-14T03:03:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCartCheckoutAndPayment -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.item.page.ItemPage@1e88b3c]" name="tearDown" is-config="true" duration-ms="2461" started-at="2019-01-13T02:21:10Z" finished-at="2019-01-13T02:21:12Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.item.page.ItemPage@1e88b3c]" name="tearDown" is-config="true" duration-ms="2507" started-at="2019-01-14T03:03:58Z" finished-at="2019-01-14T03:04:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
